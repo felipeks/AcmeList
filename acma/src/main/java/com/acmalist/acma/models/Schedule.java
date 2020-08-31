@@ -1,6 +1,7 @@
 package com.acmalist.acma.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,14 +14,14 @@ import javax.persistence.Table;
 @Table
 public class Schedule implements Serializable {
 
-	private static final long SerialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
+
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private short id;
-
 	private String title;
-
+	
 	public short getId() {
 		return id;
 	}

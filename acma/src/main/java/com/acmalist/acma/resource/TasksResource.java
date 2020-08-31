@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,26 +21,20 @@ public class TasksResource {
 	@Autowired
 	TasksRepository tasksRepository;
 	
-	@GetMapping("/tasks")
-	public List<Tasks> listaTasks() {
-		return tasksRepository.findAll();
-	}
-
-	@PostMapping("/tasks")
-	public Tasks saveList(@RequestBody Tasks tasks) {
-		return tasksRepository.save(tasks);
-	}
-
 	@DeleteMapping("/tasks/{id}")
-	public String deleteList(@PathVariable(value="id") short id) {
+	public String deleteListasks(@PathVariable(value="id") short id) {
 		tasksRepository.deleteById(id);
 	 	 return ("DELETE SUCESS");
 	}
 	
-	@PutMapping("/tasks")
-	public Tasks updateList(@RequestBody Tasks Tasks) {
-	 	return tasksRepository.save(Tasks);
+	@GetMapping("/tasks")
+	public List<Tasks> listaTasks() {
+		return tasksRepository.findAll();
 	}
-
+	@PostMapping("/tasks/{id}")
+	public Tasks saveListTasks(@RequestBody Tasks tasks) {
+		
+		return tasksRepository.save(tasks);
+	}
 	
 }

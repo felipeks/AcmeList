@@ -18,8 +18,10 @@ public class Tasks implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private short id;
-
-	private short idSchedule;
+	
+	private boolean status;
+	
+	private short Scheduling;
 
 	@Column(name = "assignment")
 	private String title;
@@ -33,15 +35,6 @@ public class Tasks implements Serializable {
 	public void setId(short id) {
 		this.id = id;
 	}
-
-	public short getIdschedule() {
-		return idSchedule;
-	}
-
-	public void setIdschedule(short idschedule) {
-		this.idSchedule = idschedule;
-	}
-
 	public String getTitle() {
 		return title;
 	}
@@ -57,5 +50,20 @@ public class Tasks implements Serializable {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+
+	public short getScheduling() {
+		return Scheduling;
+	}
+
+	public void setScheduling(short scheduling) {
+		Scheduling = scheduling;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+
 
 }
